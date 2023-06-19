@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/configConstraintLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/config_layout">
+
+    <TextView
+        android:id="@+id/stepText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="On screen step"
+        android:textSize="25sp"
+        android:paddingStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stepDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How much the marker will shift across the screen in each new movement"
+        android:textSize="15sp"
+        android:paddingStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stepText" />
+
+    <TextView
+        android:id="@+id/stepTextX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X:"
+        android:textSize="30sp"
+        android:paddingStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/editStepTextX"
+        app:layout_constraintTop_toBottomOf="@id/stepDescriptionText" />
+
+    <EditText
+        android:id="@+id/editStepTextX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/stepTextX"
+        app:layout_constraintEnd_toStartOf="@id/stepTextY"
+        app:layout_constraintTop_toBottomOf="@id/stepDescriptionText"/>
+
+    <TextView
+        android:id="@+id/stepTextY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Y:"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/editStepTextX"
+        app:layout_constraintEnd_toStartOf="@id/editStepTextY"
+        app:layout_constraintTop_toBottomOf="@id/stepDescriptionText" />
+
+    <EditText
+        android:id="@+id/editStepTextY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/stepTextY"
+        app:layout_constraintTop_toBottomOf="@id/stepDescriptionText"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    <TextView
+        android:id="@+id/startText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Starting coordinates of on screen marker"
+        android:textSize="25sp"
+        android:paddingStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editStepTextY" />
+
+    <TextView
+        android:id="@+id/startTextX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X:"
+        android:textSize="30sp"
+        android:paddingStart="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/editStartTextX"
+        app:layout_constraintTop_toBottomOf="@id/startText" />
+
+    <EditText
+        android:id="@+id/editStartTextX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/startTextX"
+        app:layout_constraintEnd_toStartOf="@id/startTextY"
+        app:layout_constraintTop_toBottomOf="@id/startText"/>
+
+    <TextView
+        android:id="@+id/startTextY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Y:"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/editStartTextX"
+        app:layout_constraintEnd_toStartOf="@id/editStartTextY"
+        app:layout_constraintTop_toBottomOf="@id/startText" />
+
+    <EditText
+        android:id="@+id/editStartTextY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/startTextY"
+        app:layout_constraintTop_toBottomOf="@id/startText"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+
+    <TextView
+        android:id="@+id/thresText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Threshold gaze change to trigger on screen shift"
+        android:textSize="25sp"
+        android:paddingStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editStartTextY"
+        />
+
+    <TextView
+        android:id="@+id/thresDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How much gaze change is required to shift on screen marker in a direction"
+        android:textSize="15sp"
+        android:paddingStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thresText"
+        />
+
+    <TextView
+        android:id="@+id/thresTextX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X:"
+        android:textSize="30sp"
+        android:paddingStart="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/editThresTextX"
+        app:layout_constraintTop_toBottomOf="@id/thresDescriptionText" />
+
+    <EditText
+        android:id="@+id/editThresTextX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/thresTextX"
+        app:layout_constraintEnd_toStartOf="@id/thresTextY"
+        app:layout_constraintTop_toBottomOf="@id/thresDescriptionText"/>
+
+    <TextView
+        android:id="@+id/thresTextY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Y:"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/editThresTextX"
+        app:layout_constraintEnd_toStartOf="@id/editThresTextY"
+        app:layout_constraintTop_toBottomOf="@id/thresDescriptionText" />
+
+    <EditText
+        android:id="@+id/editThresTextY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/thresTextY"
+        app:layout_constraintTop_toBottomOf="@id/thresDescriptionText"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintTop_toBottomOf="@id/editThresTextX"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cancelButton"/>
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+
+        app:layout_constraintTop_toBottomOf="@id/editThresTextX"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/saveButton" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

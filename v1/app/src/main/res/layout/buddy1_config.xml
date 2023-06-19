@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/config_layout">
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        app:layout_constraintStart_toEndOf="@id/saveButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/youtubeInstructionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Youtube playlist (only) link"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/editVideo1"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:layout_constraintBottom_toTopOf="@id/scratchInstructionText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/youtubeInstructionText" />
+
+    <TextView
+        android:id="@+id/scratchInstructionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add scratch game files (html only) below"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editVideo1" />
+
+    <EditText
+        android:id="@+id/editScratchFilePath1"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:layout_constraintTop_toBottomOf="@id/scratchInstructionText"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/scratchFileButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintStart_toEndOf="@id/editScratchFilePath1"
+        app:layout_constraintTop_toBottomOf="@id/scratchInstructionText"
+        app:layout_constraintEnd_toStartOf="@id/removeScratchFileButton1" />
+
+    <Button
+        android:id="@+id/removeScratchFileButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        app:layout_constraintStart_toEndOf="@id/scratchFileButton1"
+        app:layout_constraintTop_toBottomOf="@id/scratchInstructionText"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editScratchFilePath2"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:layout_constraintTop_toBottomOf="@id/editScratchFilePath1"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/scratchFileButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintStart_toEndOf="@id/editScratchFilePath2"
+        app:layout_constraintTop_toBottomOf="@id/editScratchFilePath1"
+        app:layout_constraintEnd_toStartOf="@id/removeScratchFileButton2" />
+
+    <Button
+        android:id="@+id/removeScratchFileButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        app:layout_constraintStart_toEndOf="@id/scratchFileButton2"
+        app:layout_constraintTop_toBottomOf="@id/editScratchFilePath1"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editScratchFilePath3"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:layout_constraintTop_toBottomOf="@id/editScratchFilePath2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/scratchFileButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintStart_toEndOf="@id/editScratchFilePath3"
+        app:layout_constraintTop_toBottomOf="@id/editScratchFilePath2"
+        app:layout_constraintEnd_toStartOf="@id/removeScratchFileButton3" />
+
+    <Button
+        android:id="@+id/removeScratchFileButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        app:layout_constraintStart_toEndOf="@id/scratchFileButton3"
+        app:layout_constraintTop_toBottomOf="@id/editScratchFilePath2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editScratchFilePath4"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:layout_constraintTop_toBottomOf="@id/editScratchFilePath3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cancelButton"/>
+
+    <Button
+        android:id="@+id/scratchFileButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintStart_toEndOf="@id/editScratchFilePath4"
+        app:layout_constraintTop_toBottomOf="@id/editScratchFilePath3"
+        app:layout_constraintEnd_toStartOf="@id/removeScratchFileButton4"
+        app:layout_constraintBottom_toTopOf="@id/cancelButton"/>
+
+    <Button
+        android:id="@+id/removeScratchFileButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        app:layout_constraintBottom_toTopOf="@id/cancelButton"
+        app:layout_constraintStart_toEndOf="@id/scratchFileButton4"
+        app:layout_constraintTop_toBottomOf="@id/editScratchFilePath3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

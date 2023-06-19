@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <Button
+        android:id="@+id/switchButton"
+        android:layout_width="158dp"
+        android:layout_height="83dp"
+        android:text="Switch"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/returnButton"
+        app:layout_constraintStart_toEndOf="@id/recordButton" />
+
+    <Button
+        android:id="@+id/recordButton"
+        android:text="Record To File"
+        android:layout_width="158dp"
+        android:layout_height="83dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/switchButton" />
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="129dp"
+        android:layout_height="80dp"
+        android:text="Back"
+        android:textSize="30sp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="573dp">
+
+
+    </androidx.camera.view.PreviewView>
+
+    <TextureView
+        android:id="@+id/cameraTextureView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/diagnosticsTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diagnostic View"
+        android:textSize="50sp"
+        android:background="#4A4A4A"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mlKitTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2C4978"
+        android:text="MLKit"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mlKitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2C4978"
+        android:text="None"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mlKitTitleText"/>
+
+    <TextView
+        android:id="@+id/seesoTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#7B4CAD"
+        android:text="Seeso"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/seesoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#7B4CAD"
+        android:text="None"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seesoTitleTextView" />
+
+
+    <com.example.buddy_prototype_v1.tools.PointView
+        android:id="@+id/gazeViewPoint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

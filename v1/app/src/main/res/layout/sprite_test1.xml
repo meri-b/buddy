@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/idleButton"
+        android:layout_width="129dp"
+        android:layout_height="80dp"
+        android:text="Idle"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/returnButton"
+        app:layout_constraintEnd_toStartOf="@id/jumpButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/jumpButton"
+        android:layout_width="129dp"
+        android:layout_height="80dp"
+        android:text="Jump"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/returnButton"
+        app:layout_constraintEnd_toStartOf="@id/runButton"
+        app:layout_constraintStart_toEndOf="@id/idleButton" />
+
+    <Button
+        android:id="@+id/runButton"
+        android:layout_width="129dp"
+        android:layout_height="80dp"
+        android:text="Run"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@id/sleepButton"
+        app:layout_constraintBottom_toTopOf="@id/returnButton"
+        app:layout_constraintStart_toEndOf="@id/jumpButton" />
+
+    <Button
+        android:id="@+id/sleepButton"
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:text="Sleep"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/returnButton"
+        app:layout_constraintStart_toEndOf="@id/runButton" />
+
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="129dp"
+        android:layout_height="80dp"
+        android:text="Back"
+        android:textSize="30sp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.example.buddy_prototype_v1.tools.GameView
+        android:id="@+id/gameView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/returnButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

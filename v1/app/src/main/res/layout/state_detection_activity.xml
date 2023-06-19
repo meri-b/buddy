@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/stateDetectionVariableText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="State detection variables"
+        android:textSize="30sp"
+        android:layout_marginLeft="5dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/collectFramesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Collect frames:"
+        android:textSize="30sp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stateDetectionVariableText"/>
+
+    <EditText
+        android:id="@+id/editCollectFramesText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toStartOf="@id/viewFinder"
+        app:layout_constraintTop_toBottomOf="@id/stateDetectionVariableText"/>
+
+    <TextView
+        android:id="@+id/collectFramesDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How many frames to accumulate state values. This is a sliding\nwindow."
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/collectFramesText"/>
+
+    <TextView
+        android:id="@+id/eyeOpenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eye open determination\nthreshold: "
+        android:textSize="30sp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/collectFramesDescriptionText"/>
+
+    <EditText
+        android:id="@+id/editEyeOpenText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toStartOf="@id/viewFinder"
+        app:layout_constraintBottom_toTopOf="@id/eyeOpenDescriptionText"/>
+
+    <TextView
+        android:id="@+id/eyeOpenDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Probability of 'open' an eye needs to be to count as open in a\nframe. Range: 0.0-1.0"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eyeOpenText"/>
+
+    <TextView
+        android:id="@+id/eyeOpenCountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eye open count threshold:"
+        android:textSize="30sp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eyeOpenDescriptionText"/>
+
+    <EditText
+        android:id="@+id/editEyeOpenCountText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_marginRight="5dp"
+        app:layout_constraintTop_toBottomOf="@id/eyeOpenDescriptionText"
+        app:layout_constraintEnd_toStartOf="@id/viewFinder"/>
+
+    <TextView
+        android:id="@+id/eyeOpenCountDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How many times eyes were marked as open in the most recent\ncollection of frames for the overall eye state to be marked as\nopen"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eyeOpenCountText"/>
+
+    <TextView
+        android:id="@+id/movementChangeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movement change\nthreshold:"
+        android:textSize="30sp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eyeOpenCountDescriptionText"/>
+
+    <EditText
+        android:id="@+id/editMovementChangeText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_marginRight="5dp"
+        app:layout_constraintBottom_toTopOf="@id/movementChangeDescriptionText"
+        app:layout_constraintEnd_toStartOf="@id/viewFinder"/>
+
+    <TextView
+        android:id="@+id/movementChangeDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount of cumulative movement change over the most recent\ncollection of frames required to mark inactive/active state.\nMovement is tracked by tip of the nose."
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movementChangeText"/>
+
+    <TextView
+        android:id="@+id/consecutiveStateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consecutive state threshold:"
+        android:textSize="30sp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movementChangeDescriptionText"/>
+
+    <EditText
+        android:id="@+id/editConsecutiveStateText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_marginRight="5dp"
+        app:layout_constraintTop_toBottomOf="@id/movementChangeDescriptionText"
+        app:layout_constraintEnd_toStartOf="@id/viewFinder"/>
+
+    <TextView
+        android:id="@+id/consecutiveStateDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The number of consecutive states (inactive/active) that need to\nbe seen to set a longer term state"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/consecutiveStateText"/>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:text="Save"
+        android:textSize="30sp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/defaultButton"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:text="Default"
+        android:textSize="30sp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/saveButton"/>
+
+    <TextView
+        android:id="@+id/buddyActivityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buddy activity variables"
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/viewFinder"
+        app:layout_constraintTop_toBottomOf="@id/viewFinder"/>
+
+    <TextView
+        android:id="@+id/triggerStateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trigger state: "
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="@id/viewFinder"
+        app:layout_constraintTop_toBottomOf="@id/buddyActivityText"/>
+
+    <Spinner
+        android:id="@+id/triggerStateSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toEndOf="@id/triggerStateText"
+        app:layout_constraintTop_toBottomOf="@id/buddyActivityText" />
+
+
+    <TextView
+        android:id="@+id/triggerActivityAtThresholdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Trigger activity\nthreshold: "
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/viewFinder"
+        app:layout_constraintTop_toBottomOf="@+id/triggerStateSpinner" />
+
+    <EditText
+        android:id="@+id/editTriggerActivityAtThresholdText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@id/editStateWindowText"
+        app:layout_constraintStart_toEndOf="@id/triggerActivityAtThresholdText" />
+
+    <TextView
+        android:id="@+id/stateWindowText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="State window: "
+        android:textSize="24sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="@id/viewFinder"
+        app:layout_constraintTop_toBottomOf="@id/triggerActivityAtThresholdText"/>
+
+    <EditText
+        android:id="@+id/editStateWindowText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/triggerActivityAtThresholdText"
+        app:layout_constraintStart_toEndOf="@id/stateWindowText"/>
+
+    <TextView
+        android:id="@+id/debugTriggerStateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debug trigger state: "
+        android:textSize="24sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/triggerStateSpinner"
+        app:layout_constraintTop_toBottomOf="@id/buddyActivityText"/>
+
+    <Spinner
+        android:id="@+id/debugTriggerStateSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/debugTriggerStateText"
+        app:layout_constraintTop_toBottomOf="@id/buddyActivityText"/>
+
+    <TextView
+        android:id="@+id/debugTriggerActivityAtThresholdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Debug trigger\nactivity threshold: "
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/editTriggerActivityAtThresholdText"
+        app:layout_constraintTop_toBottomOf="@+id/debugTriggerStateSpinner" />
+
+    <EditText
+        android:id="@+id/editDebugTriggerActivityAtThresholdText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@id/editDebugStateWindowText"
+        app:layout_constraintStart_toEndOf="@id/debugTriggerActivityAtThresholdText"/>
+
+    <TextView
+        android:id="@+id/debugStateWindowText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debug state window: "
+        android:textSize="24sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/editStateWindowText"
+        app:layout_constraintTop_toBottomOf="@id/debugTriggerActivityAtThresholdText"/>
+
+    <EditText
+        android:id="@+id/editDebugStateWindowText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/debugTriggerActivityAtThresholdText"
+        app:layout_constraintStart_toEndOf="@id/debugStateWindowText"/>
+
+    <Button
+        android:id="@+id/gazeButton"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:text="Track Gaze"
+        android:textSize="20sp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toTopOf="@id/returnButton"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:text="Back"
+        android:textSize="30sp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="600dp"
+        android:layout_height="400dp"
+        app:layout_constraintEnd_toStartOf="@+id/mlKitText"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.camera.view.PreviewView>
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2C4978"
+        android:text="MLKit"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mlKitText"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:background="#2C4978"
+        android:text="None"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleText"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

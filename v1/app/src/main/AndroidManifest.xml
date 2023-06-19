@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.buddy_prototype_v1">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Buddy_prototype_v1">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".menus.DevToolsActivity"></activity>
+        <activity android:name=".menus.SetupActivity"></activity>
+        <activity android:name=".utility_apps.DiagnosticsActivity"></activity>
+        <activity android:name=".configure.CalibrationActivity"></activity>
+        <activity android:name=".apps.VideoChooserActivity"></activity>
+        <activity android:name=".tools.MLKitFaceAnalyzer"></activity>
+        <activity android:name=".apps.ScratchGenericActivity"></activity>
+        <activity android:name=".configure.StateDetectionActivity"></activity>
+        <activity android:name=".utility_apps.SpriteTest1Activity"></activity>
+        <activity android:name=".utility_apps.Diagnostics2Activity"></activity>
+        <activity android:name=".apps.Buddy1Activity"></activity>
+    </application>
+
+    <queries>
+        <package android:name="com.google.android.youtube" />
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+
+    </queries>
+
+</manifest>
